@@ -10,6 +10,9 @@ use Mix.Config
 config :open_event,
   ecto_repos: [OpenEvent.Repo]
 
+config :open_event, OpenEvent.Repo,
+  migration_timestamps: [type: :utc_datetime_usec]
+
 # Configures the endpoint
 config :open_event, OpenEventWeb.Endpoint,
   url: [host: "localhost"],

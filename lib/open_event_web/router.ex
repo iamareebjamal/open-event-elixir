@@ -5,7 +5,9 @@ defmodule OpenEventWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/api", OpenEventWeb do
+  scope "/v1", OpenEventWeb do
     pipe_through :api
+
+    resources "/events", EventController, except: [:new, :edit]
   end
 end
